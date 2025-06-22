@@ -49,6 +49,159 @@
             transition: all 0.3s ease;
         }
 
+        /* Floating Triangles - Outline only and only for home page */
+        .floating-triangles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .hero .floating-triangles {
+            position: absolute;
+        }
+
+        .triangle {
+            position: absolute;
+            width: 0;
+            height: 0;
+            opacity: 0.3;
+            animation: floatTriangle 15s infinite linear;
+        }
+
+        .triangle-1 {
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-bottom: 52px solid transparent;
+            border-bottom-color: var(--primary-color);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .triangle-1::before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 3px;
+            width: 0;
+            height: 0;
+            border-left: 27px solid transparent;
+            border-right: 27px solid transparent;
+            border-bottom: 46px solid var(--bg-color);
+        }
+
+        .triangle-2 {
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 35px solid transparent;
+            border-bottom-color: var(--secondary-color);
+            top: 30%;
+            right: 15%;
+            animation-delay: 3s;
+        }
+
+        .triangle-2::before {
+            content: '';
+            position: absolute;
+            left: -17px;
+            top: 3px;
+            width: 0;
+            height: 0;
+            border-left: 17px solid transparent;
+            border-right: 17px solid transparent;
+            border-bottom: 29px solid var(--bg-color);
+        }
+
+        .triangle-3 {
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-bottom: 43px solid transparent;
+            border-bottom-color: var(--primary-color);
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 6s;
+        }
+
+        .triangle-3::before {
+            content: '';
+            position: absolute;
+            left: -22px;
+            top: 3px;
+            width: 0;
+            height: 0;
+            border-left: 22px solid transparent;
+            border-right: 22px solid transparent;
+            border-bottom: 37px solid var(--bg-color);
+        }
+
+        .triangle-4 {
+            border-left: 35px solid transparent;
+            border-right: 35px solid transparent;
+            border-bottom: 60px solid transparent;
+            border-bottom-color: var(--secondary-color);
+            top: 60%;
+            right: 30%;
+            animation-delay: 9s;
+        }
+
+        .triangle-4::before {
+            content: '';
+            position: absolute;
+            left: -32px;
+            top: 3px;
+            width: 0;
+            height: 0;
+            border-left: 32px solid transparent;
+            border-right: 32px solid transparent;
+            border-bottom: 54px solid var(--bg-color);
+        }
+
+        .triangle-5 {
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 26px solid transparent;
+            border-bottom-color: var(--primary-color);
+            bottom: 40%;
+            right: 10%;
+            animation-delay: 12s;
+        }
+
+        .triangle-5::before {
+            content: '';
+            position: absolute;
+            left: -12px;
+            top: 3px;
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-bottom: 20px solid var(--bg-color);
+        }
+
+        @keyframes floatTriangle {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg); 
+                opacity: 0.3;
+            }
+            25% { 
+                transform: translateY(-20px) rotate(90deg); 
+                opacity: 0.1;
+            }
+            50% { 
+                transform: translateY(-10px) rotate(180deg); 
+                opacity: 0.3;
+            }
+            75% { 
+                transform: translateY(-30px) rotate(270deg); 
+                opacity: 0.2;
+            }
+        }
+
         /* Theme Toggle */
         .theme-toggle {
             position: fixed;
@@ -86,7 +239,7 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 1rem 0;
+            padding: 0.5rem 0;
             border-bottom: 1px solid var(--border-color);
             transition: all 0.3s ease;
         }
@@ -98,7 +251,7 @@
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -132,7 +285,7 @@
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.5rem;
             align-items: center;
         }
 
@@ -142,8 +295,9 @@
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
         }
 
         .nav-link:hover,
@@ -174,8 +328,8 @@
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -183,7 +337,7 @@
             display: inline-block;
             position: relative;
             overflow: hidden;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .cv-btn::before {
@@ -212,6 +366,7 @@
             flex-direction: column;
             cursor: pointer;
             padding: 0.5rem;
+            z-index: 1001;
         }
 
         .hamburger span {
@@ -240,7 +395,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 100px 0 50px;
+            padding: 80px 0 50px;
             background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-color) 100%);
             position: relative;
             overflow: hidden;
@@ -535,6 +690,53 @@
             animation-delay: 1.5s;
         }
 
+        /* Curved Arrow Lines - Outside profile image */
+        .curved-arrow {
+            position: absolute;
+            z-index: 3;
+        }
+
+        .curved-arrow-1 {
+            top: 10%;
+            right: -25%;
+            width: 120px;
+            height: 80px;
+        }
+
+        .curved-arrow-1 svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .curved-arrow-2 {
+            bottom: 10%;
+            left: -25%;
+            width: 120px;
+            height: 80px;
+        }
+
+        .curved-arrow-2 svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .arrow-path {
+            fill: none;
+            stroke: var(--primary-color);
+            stroke-width: 2;
+            stroke-dasharray: 5, 5;
+            animation: dashMove 2s linear infinite;
+        }
+
+        .arrow-head {
+            fill: var(--primary-color);
+        }
+
+        @keyframes dashMove {
+            0% { stroke-dashoffset: 0; }
+            100% { stroke-dashoffset: 20; }
+        }
+
         @keyframes float {
             0%, 100% { transform: translateY(0px) scale(1); }
             50% { transform: translateY(-10px) scale(1.05); }
@@ -650,9 +852,100 @@
             padding: 0 20px;
         }
 
+        /* Services Section */
+        .services {
+            background: var(--bg-secondary);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, var(--border-color), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+            animation: rotate 2s linear infinite;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(45deg); }
+            100% { transform: rotate(405deg); }
+        }
+
         /* Education Section - Roadmap Style (Starting from bottom) */
         .education {
-            background: var(--bg-secondary);
+            background: var(--bg-color);
         }
 
         .education-roadmap {
@@ -817,7 +1110,7 @@
 
         /* Certifications Section */
         .certifications {
-            background: var(--bg-color);
+            background: var(--bg-secondary);
         }
 
         .cert-carousel-container {
@@ -828,6 +1121,7 @@
             border-radius: 15px;
             box-shadow: var(--shadow);
             background: var(--card-bg);
+            touch-action: pan-y;
         }
 
         .cert-carousel {
@@ -842,6 +1136,25 @@
             display: flex;
             gap: 2rem;
             align-items: center;
+            position: relative;
+        }
+
+        /* Certificate Card Number */
+        .cert-number {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 12px rgba(0, 48, 192, 0.3);
         }
 
         .cert-image {
@@ -875,14 +1188,15 @@
             display: inline-block;
         }
 
-        /* Fixed Carousel Controls - Below the card */
+        /* Enhanced Carousel Controls - Below the card without arrows */
         .carousel-controls-container {
             position: relative;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            padding: 0 20px;
+            padding: 20px;
             margin-top: 20px;
+            gap: 2rem;
         }
 
         .carousel-controls {
@@ -899,7 +1213,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            position: static;
+            position: relative;
         }
 
         .carousel-controls:hover {
@@ -912,6 +1226,10 @@
             justify-content: center;
             gap: 0.5rem;
             margin-top: 2rem;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            flex-wrap: wrap;
         }
 
         .indicator {
@@ -926,6 +1244,11 @@
         .indicator.active {
             background: var(--primary-color);
             transform: scale(1.2);
+        }
+
+        /* Limit indicators to maximum 5 visible */
+        .indicator:nth-child(n+6) {
+            display: none;
         }
 
         /* Internship Carousel */
@@ -951,6 +1274,24 @@
             display: flex;
             gap: 2rem;
             align-items: center;
+            position: relative;
+        }
+
+        .internship-number {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
         }
 
         .internship-image {
@@ -986,7 +1327,7 @@
 
         /* Projects Section */
         .projects {
-            background: var(--bg-secondary);
+            background: var(--bg-color);
         }
 
         .projects-grid {
@@ -1107,9 +1448,9 @@
             font-weight: 500;
         }
 
-        /* Skills Section - Percentage Bar Method */
+        /* Enhanced Skills Section with Logos and Levels */
         .skills {
-            background: var(--bg-color);
+            background: var(--bg-secondary);
         }
 
         .skills-content {
@@ -1153,34 +1494,59 @@
             margin-bottom: 1rem;
         }
 
-        .skill-icon, .tool-icon {
-            width: 40px;
-            height: 40px;
+        .skill-logo, .tool-logo {
+            width: 50px;
+            height: 50px;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border-radius: 10px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .skill-info, .tool-info {
+            flex: 1;
         }
 
         .skill-name, .tool-name {
             font-weight: 600;
             color: var(--text-color);
             font-size: 1.1rem;
+            margin-bottom: 0.3rem;
         }
 
-        .skill-bar {
+        .skill-level, .tool-level {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .level-beginner {
+            color: #ff6b6b;
+        }
+
+        .level-intermediate {
+            color: #ffa726;
+        }
+
+        .level-advanced {
+            color: #66bb6a;
+        }
+
+        .skill-progress, .tool-progress {
             width: 100%;
             height: 8px;
             background: var(--border-color);
             border-radius: 4px;
             overflow: hidden;
             position: relative;
+            margin-top: 0.5rem;
         }
 
-        .progress {
+        .progress-bar {
             height: 100%;
             background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
             border-radius: 4px;
@@ -1190,7 +1556,7 @@
             overflow: hidden;
         }
 
-        .progress::after {
+        .progress-bar::after {
             content: '';
             position: absolute;
             top: 0;
@@ -1218,7 +1584,7 @@
 
         /* Responsibilities Section */
         .responsibilities {
-            background: var(--bg-secondary);
+            background: var(--bg-color);
         }
 
         .responsibilities-container {
@@ -1264,11 +1630,6 @@
             animation: rotate 2s linear infinite;
         }
 
-        @keyframes rotate {
-            0% { transform: rotate(45deg); }
-            100% { transform: rotate(405deg); }
-        }
-
         .responsibility-square:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-hover);
@@ -1303,7 +1664,7 @@
 
         /* Contact Section */
         .contact {
-            background: var(--bg-color);
+            background: var(--bg-secondary);
         }
 
         .contact-container {
@@ -1567,11 +1928,32 @@
                 box-shadow: var(--shadow);
                 padding: 2rem 0;
                 border-radius: 0 0 15px 15px;
+                z-index: 999;
             }
 
             .nav-menu.active {
                 left: 0;
             }
+
+            .nav-menu li {
+                opacity: 0;
+                transform: translateY(-20px);
+                transition: all 0.3s ease;
+            }
+
+            .nav-menu.active li {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .nav-menu.active li:nth-child(1) { transition-delay: 0.1s; }
+            .nav-menu.active li:nth-child(2) { transition-delay: 0.2s; }
+            .nav-menu.active li:nth-child(3) { transition-delay: 0.3s; }
+            .nav-menu.active li:nth-child(4) { transition-delay: 0.4s; }
+            .nav-menu.active li:nth-child(5) { transition-delay: 0.5s; }
+            .nav-menu.active li:nth-child(6) { transition-delay: 0.6s; }
+            .nav-menu.active li:nth-child(7) { transition-delay: 0.7s; }
+            .nav-menu.active li:nth-child(8) { transition-delay: 0.8s; }
 
             .cv-btn {
                 display: none;
@@ -1618,6 +2000,10 @@
                 left: -5%;
             }
 
+            .curved-arrow-1, .curved-arrow-2 {
+                display: none;
+            }
+
             .social-links {
                 justify-content: center;
                 flex-wrap: wrap;
@@ -1630,6 +2016,10 @@
 
             .cv-download {
                 justify-content: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
             }
 
             .skills-content {
@@ -1697,6 +2087,10 @@
             .skills-section, .tools-section {
                 padding: 2rem;
             }
+
+            .floating-triangles .triangle {
+                display: none;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1731,6 +2125,16 @@
                 font-size: 0.8rem;
                 padding: 0.4rem 0.8rem;
             }
+
+            .service-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .service-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -1748,6 +2152,7 @@
             </div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
                 <li><a href="#education" class="nav-link">Education</a></li>
                 <li><a href="#certification" class="nav-link">Certification</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
@@ -1768,6 +2173,15 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <!-- Floating Triangles - Only for home page -->
+        <div class="floating-triangles">
+            <div class="triangle triangle-1"></div>
+            <div class="triangle triangle-2"></div>
+            <div class="triangle triangle-3"></div>
+            <div class="triangle triangle-4"></div>
+            <div class="triangle triangle-5"></div>
+        </div>
+        
         <div class="hero-container">
             <div class="hero-content">
                 <div class="greeting-box">
@@ -1817,6 +2231,18 @@
                     <img src="image1 copy.jpg" alt="Bharathkumar G">
                     <div class="floating-tag tag-1">UI/UX Designer</div>
                     <div class="floating-tag tag-2">Front-End Developer</div>
+                    <div class="curved-arrow curved-arrow-1">
+                        <svg viewBox="0 0 120 80">
+                            <path class="arrow-path" d="M10,70 Q60,10 110,40" />
+                            <polygon class="arrow-head" points="105,35 115,40 105,45" />
+                        </svg>
+                    </div>
+                    <div class="curved-arrow curved-arrow-2">
+                        <svg viewBox="0 0 120 80">
+                            <path class="arrow-path" d="M110,10 Q60,70 10,40" />
+                            <polygon class="arrow-head" points="15,35 5,40 15,45" />
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1825,6 +2251,39 @@
             <div class="skill-tag">UI/UX Design</div>
             <div class="skill-tag">Front-End Development</div>
             <div class="skill-tag">Responsive Design</div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="services-container">
+            <div class="section-header">
+                <h2>Services</h2>
+                <p>What I Offer</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>WEBSITE DESIGN</h3>
+                    <p>Creating modern, responsive websites with clean design principles, intuitive navigation, and optimized user experience that effectively communicates your brand message and drives engagement.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>BACKEND DEVELOPMENT</h3>
+                    <p>Building robust server-side applications with secure APIs, efficient database management, and scalable architecture to power your web applications with reliable performance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>UI DESIGN</h3>
+                    <p>Crafting intuitive and visually appealing user interfaces that enhance user experience through thoughtful design, consistent visual hierarchy, and user-centered design principles.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1939,144 +2398,177 @@
             <div class="section-header">
                 <h2>Skills</h2>
                 <p>Technologies I Work With</p>
-        </div>
-        <div class="skills-content">
-            <div class="skills-column">
-                <div class="skill">
-                    <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fab fa-html5"></i>
+            </div>
+            <div class="skills-content">
+                <div class="skills-column">
+                    <div class="skill">
+                        <div class="skill-header">
+                            <div class="skill-logo">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <div class="skill-info">
+                                <div class="skill-name">HTML</div>
+                                <div class="skill-level level-advanced">Advanced</div>
+                            </div>
                         </div>
-                        <div class="skill-name">HTML</div>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-width="90%"></div>
+                        </div>
                     </div>
-                    <div class="skill-bar">
-                        <div class="progress" data-width="90%"></div>
+                    <div class="skill">
+                        <div class="skill-header">
+                            <div class="skill-logo">
+                                <i class="fab fa-css3-alt"></i>
+                            </div>
+                            <div class="skill-info">
+                                <div class="skill-name">CSS</div>
+                                <div class="skill-level level-advanced">Advanced</div>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-header">
+                            <div class="skill-logo">
+                                <i class="fab fa-js-square"></i>
+                            </div>
+                            <div class="skill-info">
+                                <div class="skill-name">JavaScript</div>
+                                <div class="skill-level level-intermediate">Intermediate</div>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-width="65%"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="skill">
-                    <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fab fa-css3-alt"></i>
+                <div class="skills-column">
+                    <div class="skill">
+                        <div class="skill-header">
+                            <div class="skill-logo">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="skill-info">
+                                <div class="skill-name">Python</div>
+                                <div class="skill-level level-intermediate">Intermediate</div>
+                            </div>
                         </div>
-                        <div class="skill-name">CSS</div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="progress" data-width="80%"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fab fa-js-square"></i>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-width="75%"></div>
                         </div>
-                        <div class="skill-name">JavaScript</div>
                     </div>
-                    <div class="skill-bar">
-                        <div class="progress" data-width="65%"></div>
+                    <div class="skill">
+                        <div class="skill-header">
+                            <div class="skill-logo">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="skill-info">
+                                <div class="skill-name">C</div>
+                                <div class="skill-level level-beginner">Beginner</div>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-width="50%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-header">
+                            <div class="skill-logo">
+                                <i class="fab fa-java"></i>
+                            </div>
+                            <div class="skill-info">
+                                <div class="skill-name">Java</div>
+                                <div class="skill-level level-beginner">Beginner</div>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-width="50%"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="skills-column">
-                <div class="skill">
-                    <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fab fa-python"></i>
-                        </div>
-                        <div class="skill-name">Python</div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="progress" data-width="75%"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="skill-name">C</div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="progress" data-width="50%"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fab fa-java"></i>
-                        </div>
-                        <div class="skill-name">Java</div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="progress" data-width="50%"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="tools-section">
-            <div class="section-header">
-                <h2>Tools Known</h2>
-            </div>
-            <div class="tools-container">
-                <div class="tool">
-                    <div class="tool-header">
-                        <div class="tool-icon">
-                            <i class="fab fa-git-alt"></i>
-                        </div>
-                        <div class="tool-name">Git</div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="progress" data-width="80%"></div>
-                    </div>
+            <div class="tools-section">
+                <div class="section-header">
+                    <h2>Tools Known</h2>
                 </div>
-                <div class="tool">
-                    <div class="tool-header">
-                        <div class="tool-icon">
-                            <i class="fab fa-figma"></i>
+                <div class="tools-container">
+                    <div class="tool">
+                        <div class="tool-header">
+                            <div class="tool-logo">
+                                <i class="fab fa-git-alt"></i>
+                            </div>
+                            <div class="tool-info">
+                                <div class="tool-name">Git</div>
+                                <div class="tool-level level-advanced">Advanced</div>
+                            </div>
                         </div>
-                        <div class="tool-name">Figma</div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="progress" data-width="70%"></div>
-                    </div>
-                </div>
-                <div class="tool">
-                    <div class="tool-header">
-                        <div class="tool-icon">
-                            <i class="fas fa-code"></i>
+                        <div class="tool-progress">
+                            <div class="progress-bar" data-width="80%"></div>
                         </div>
-                        <div class="tool-name">VS Code</div>
                     </div>
-                    <div class="skill-bar">
-                        <div class="progress" data-width="90%"></div>
-                    </div>
-                </div>
-                <div class="tool">
-                    <div class="tool-header">
-                        <div class="tool-icon">
-                            <i class="fas fa-palette"></i>
+                    <div class="tool">
+                        <div class="tool-header">
+                            <div class="tool-logo">
+                                <i class="fab fa-figma"></i>
+                            </div>
+                            <div class="tool-info">
+                                <div class="tool-name">Figma</div>
+                                <div class="tool-level level-intermediate">Intermediate</div>
+                            </div>
                         </div>
-                        <div class="tool-name">Canva</div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="progress" data-width="90%"></div>
-                    </div>
-                </div>
-                <div class="tool">
-                    <div class="tool-header">
-                        <div class="tool-icon">
-                            <i class="fas fa-image"></i>
+                        <div class="tool-progress">
+                            <div class="progress-bar" data-width="70%"></div>
                         </div>
-                        <div class="tool-name">Photoshop</div>
                     </div>
-                    <div class="skill-bar">
-                        <div class="progress" data-width="60%"></div>
+                    <div class="tool">
+                        <div class="tool-header">
+                            <div class="tool-logo">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="tool-info">
+                                <div class="tool-name">VS Code</div>
+                                <div class="tool-level level-advanced">Advanced</div>
+                            </div>
+                        </div>
+                        <div class="tool-progress">
+                            <div class="progress-bar" data-width="90%"></div>
+                        </div>
+                    </div>
+                    <div class="tool">
+                        <div class="tool-header">
+                            <div class="tool-logo">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="tool-info">
+                                <div class="tool-name">Canva</div>
+                                <div class="tool-level level-advanced">Advanced</div>
+                            </div>
+                        </div>
+                        <div class="tool-progress">
+                            <div class="progress-bar" data-width="90%"></div>
+                        </div>
+                    </div>
+                    <div class="tool">
+                        <div class="tool-header">
+                            <div class="tool-logo">
+                                <i class="fas fa-image"></i>
+                            </div>
+                            <div class="tool-info">
+                                <div class="tool-name">Photoshop</div>
+                                <div class="tool-level level-intermediate">Intermediate</div>
+                            </div>
+                        </div>
+                        <div class="tool-progress">
+                            <div class="progress-bar" data-width="60%"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Responsibilities Section -->
     <section id="responsibilities" class="responsibilities">
@@ -2211,11 +2703,11 @@
         const themeIcon = document.getElementById('themeIcon');
         const body = document.body;
 
-        // Check for saved theme preference or default to light mode
-        const currentTheme = localStorage.getItem('theme') || 'light';
+        // Check for saved theme preference or default to dark mode
+        const currentTheme = localStorage.getItem('theme') || 'dark';
         body.setAttribute('data-theme', currentTheme);
 
-        // Set initial icon based on theme
+        // Set initial icon based on theme - default to dark
         if (currentTheme === 'dark') {
             themeIcon.className = 'fas fa-sun theme-icon';
             themeIcon.style.color = '#FFD700';
@@ -2305,7 +2797,7 @@
             }
         });
 
-        // Certificate Data with All Real Images
+        // All 31 Certificate Data
         const certificates = [
             {
                 image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/certi1.jpg-rCgs73yxvef9OkXSQoH5di4Fy6MUFe.jpeg",
@@ -2497,7 +2989,6 @@
                 description: "This certificate of appreciation is awarded to Bharathkumar G (ID: 721722205006) from B.Tech IT, P.A. College of Engineering and Technology for successfully completing an internship training in Web Development at Crescent Infotech. The internship was conducted from 10th June 2024 to 28th June 2024, under the supervision of Mr. M. Yuvij and authorized by P. Dinesh, Head of the organization. The training provided hands-on experience and enhanced web development skills essential for real-world application",
                 date: "June 10,2024 - June 28,2024"
             },
-            
             {
                 image: "offer letter.jpg",
                 title: "Android App Development Internship Offer – CodSoft",
@@ -2513,15 +3004,15 @@
                 title: "AI-based Interactive Chatbot",
                 description: "Developing an AI-based interactive chatbot or virtual assistant for the Department of Justice's Website using modern NLP technologies and machine learning algorithms.",
                 tags: ["AI", "NLP", "JavaScript", "Python", "Machine Learning"],
-                github: "#", // Will be provided by user
+                github: "#",
                 live: "#"
             },
             {
                 image: "ui spotify.jpg",
-                title: "Sotify Clone Application - UI",
-                description: "Clone of Facebook application with modern UI/UX design, responsive features, real-time messaging capabilities, and social media functionalities.",
+                title: "Spotify Clone Application - UI",
+                description: "Clone of Spotify application with modern UI/UX design, responsive features, music streaming capabilities, and social media functionalities.",
                 tags: ["Figma"],
-                github: "https://www.figma.com/proto/ODG4kErdN9cufXxFfnjKPD/Spotify-Clone-App?page-id=0%3A1&node-id=10-3&viewport=205%2C-580%2C0.53&t=6CqHHkdf2IRNwAcv-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=10%3A2", // Will be provided by user
+                github: "https://www.figma.com/proto/ODG4kErdN9cufXxFfnjKPD/Spotify-Clone-App?page-id=0%3A1&node-id=10-3&viewport=205%2C-580%2C0.53&t=6CqHHkdf2IRNwAcv-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=10%3A2",
                 live: "https://www.figma.com/proto/ODG4kErdN9cufXxFfnjKPD/Spotify-Clone-App?page-id=0%3A1&node-id=10-3&viewport=205%2C-580%2C0.53&t=6CqHHkdf2IRNwAcv-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=10%3A2"
             },
             {
@@ -2529,16 +3020,15 @@
                 title: "Portfolio Website",
                 description: "Personal portfolio website showcasing projects, skills, and achievements with modern design, smooth animations, and responsive layout across all devices.",
                 tags: ["HTML5", "CSS3", "JavaScript", "GSAP", "Responsive"],
-                github: "https://github.com/Bharath-max-alt/portfolio.git", // Will be provided by user
+                github: "https://github.com/Bharath-max-alt/portfolio.git",
                 live: "https://bharath-max-alt.github.io/portfolio/"
             },
-
             {
                 image: "music player.png",
                 title: "Music Player Application",
                 description: "Music player application using Python with advanced audio processing capabilities, playlist management, equalizer, and modern user interface design.",
                 tags: ["Python", "Tkinter", "Audio Processing", "UI/UX", "SQLite"],
-                github: "music player.png", // Will be provided by user
+                github: "#",
                 live: "#"
             },
             {
@@ -2546,7 +3036,7 @@
                 title: "Task Management App",
                 description: "Responsive task management application with drag-and-drop functionality, team collaboration features, deadline tracking, and progress visualization.",
                 tags: ["HTML", "CSS", "JAVASCRIPT", "Real-time"],
-                github: "https://github.com/Bharath-max-alt/To-Do-List", // Will be provided by user
+                github: "https://github.com/Bharath-max-alt/To-Do-List",
                 live: "https://bharath-max-alt.github.io/To-Do-List/"
             },
             {
@@ -2554,29 +3044,34 @@
                 title: "E-commerce Website",
                 description: "Full-stack e-commerce website with shopping cart functionality, payment integration, user authentication, and admin dashboard for product management.",
                 tags: ["React", "Node.js", "MongoDB", "Stripe", "JWT"],
-                github: "#", // Will be provided by user
+                github: "#",
                 live: "#"
             }
-            
-            
         ];
 
-        // Certificate Carousel
+        // Certificate Carousel with Touch Support
         let currentCertIndex = 0;
         const certCarousel = document.getElementById('certCarousel');
         const certIndicators = document.getElementById('certIndicators');
         const certPrevBtn = document.getElementById('certPrevBtn');
         const certNextBtn = document.getElementById('certNextBtn');
+        const certCarouselContainer = document.querySelector('.cert-carousel-container');
+
+        // Touch/Swipe variables
+        let startX = 0;
+        let currentX = 0;
+        let isDragging = false;
 
         function createCertificateCards() {
             certCarousel.innerHTML = '';
             certIndicators.innerHTML = '';
 
             certificates.forEach((cert, index) => {
-                // Create certificate card
+                // Create certificate card for all certificates
                 const certCard = document.createElement('div');
                 certCard.className = 'cert-card';
                 certCard.innerHTML = `
+                    <div class="cert-number">${index + 1}</div>
                     <img src="${cert.image}" alt="${cert.title}" class="cert-image">
                     <div class="cert-content">
                         <h3>${cert.title}</h3>
@@ -2585,22 +3080,24 @@
                     </div>
                 `;
                 certCarousel.appendChild(certCard);
-
-                // Create indicator
-                const indicator = document.createElement('div');
-                indicator.className = `indicator ${index === 0 ? 'active' : ''}`;
-                indicator.addEventListener('click', () => goToCertSlide(index));
-                certIndicators.appendChild(indicator);
             });
+
+            // Create only 5 indicators regardless of certificate count
+            for (let i = 0; i < Math.min(5, certificates.length); i++) {
+                const indicator = document.createElement('div');
+                indicator.className = `indicator ${i === 0 ? 'active' : ''}`;
+                indicator.addEventListener('click', () => goToCertSlide(i));
+                certIndicators.appendChild(indicator);
+            }
         }
 
         function updateCertCarousel() {
             const translateX = -currentCertIndex * 100;
             certCarousel.style.transform = `translateX(${translateX}%)`;
             
-            // Update indicators
+            // Update indicators (only show active state for first 5)
             document.querySelectorAll('#certIndicators .indicator').forEach((indicator, index) => {
-                indicator.classList.toggle('active', index === currentCertIndex);
+                indicator.classList.toggle('active', index === (currentCertIndex % 5));
             });
         }
 
@@ -2619,6 +3116,83 @@
             updateCertCarousel();
         }
 
+        // Touch/Swipe Event Handlers
+        certCarouselContainer.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+            certCarousel.style.transition = 'none';
+        });
+
+        certCarouselContainer.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            currentX = e.touches[0].clientX;
+            const diffX = currentX - startX;
+            const translateX = -currentCertIndex * 100 + (diffX / certCarouselContainer.offsetWidth) * 100;
+            certCarousel.style.transform = `translateX(${translateX}%)`;
+        });
+
+        certCarouselContainer.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+            isDragging = false;
+            certCarousel.style.transition = 'transform 0.5s ease';
+            
+            const diffX = currentX - startX;
+            const threshold = 50;
+            
+            if (diffX > threshold) {
+                prevCertSlide();
+            } else if (diffX < -threshold) {
+                nextCertSlide();
+            } else {
+                updateCertCarousel();
+            }
+        });
+
+        // Mouse drag support for desktop
+        certCarouselContainer.addEventListener('mousedown', (e) => {
+            startX = e.clientX;
+            isDragging = true;
+            certCarousel.style.transition = 'none';
+            certCarouselContainer.style.cursor = 'grabbing';
+        });
+
+        certCarouselContainer.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            currentX = e.clientX;
+            const diffX = currentX - startX;
+            const translateX = -currentCertIndex * 100 + (diffX / certCarouselContainer.offsetWidth) * 100;
+            certCarousel.style.transform = `translateX(${translateX}%)`;
+        });
+
+        certCarouselContainer.addEventListener('mouseup', (e) => {
+            if (!isDragging) return;
+            isDragging = false;
+            certCarousel.style.transition = 'transform 0.5s ease';
+            certCarouselContainer.style.cursor = 'grab';
+            
+            const diffX = currentX - startX;
+            const threshold = 50;
+            
+            if (diffX > threshold) {
+                prevCertSlide();
+            } else if (diffX < -threshold) {
+                nextCertSlide();
+            } else {
+                updateCertCarousel();
+            }
+        });
+
+        certCarouselContainer.addEventListener('mouseleave', () => {
+            if (isDragging) {
+                isDragging = false;
+                certCarousel.style.transition = 'transform 0.5s ease';
+                certCarouselContainer.style.cursor = 'grab';
+                updateCertCarousel();
+            }
+        });
+
         // Auto-scroll every 5 seconds for certificates
         let certAutoScrollInterval = setInterval(nextCertSlide, 5000);
 
@@ -2631,7 +3205,7 @@
             certAutoScrollInterval = setInterval(nextCertSlide, 5000);
         });
 
-        // Manual controls for certificates - Fixed positioning
+        // Manual controls for certificates
         certNextBtn.addEventListener('click', (e) => {
             e.preventDefault();
             clearInterval(certAutoScrollInterval);
@@ -2662,6 +3236,7 @@
                 const internshipCard = document.createElement('div');
                 internshipCard.className = 'internship-card';
                 internshipCard.innerHTML = `
+                    <div class="internship-number">${index + 1}</div>
                     <img src="${internship.image}" alt="${internship.title}" class="internship-image">
                     <div class="internship-content">
                         <h3>${internship.title}</h3>
@@ -2716,7 +3291,7 @@
             internshipAutoScrollInterval = setInterval(nextInternshipSlide, 5000);
         });
 
-        // Manual controls for internships - Fixed positioning
+        // Manual controls for internships
         internshipNextBtn.addEventListener('click', (e) => {
             e.preventDefault();
             clearInterval(internshipAutoScrollInterval);
@@ -2780,7 +3355,7 @@
                     entry.target.classList.add('visible');
             
                     // Animate skill bars when visible
-                    const skillBars = entry.target.querySelectorAll('.progress');
+                    const skillBars = entry.target.querySelectorAll('.progress-bar');
                     skillBars.forEach((bar, index) => {
                         const width = bar.getAttribute('data-width');
                         setTimeout(() => {
@@ -2792,7 +3367,7 @@
         }, observerOptions);
 
         // Observe elements for animation
-        document.querySelectorAll('.section-header, .roadmap-item, .skill, .tool, .responsibility-square, .project-card').forEach(el => {
+        document.querySelectorAll('.section-header, .roadmap-item, .skill, .tool, .responsibility-square, .project-card, .service-card').forEach(el => {
             observer.observe(el);
         });
 
@@ -2809,7 +3384,9 @@
 
             if (name && email && message) {
                 const whatsappUrl = `https://wa.me/919360504959?text=${encodeURIComponent(
-                    `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
+                    `Name: ${name}
+Email: ${email}
+Message: ${message}`
                 )}`;
                 window.open(whatsappUrl, '_blank');
                 
@@ -2923,59 +3500,6 @@
             }, 100);
         });
 
-        // Zoom-in effect for the home page title
-        document.addEventListener("DOMContentLoaded", () => {
-            const homeTitle = document.querySelector(".hero-content h1");
-            if (homeTitle) {
-                homeTitle.style.transition = "transform 0.8s ease-in-out";
-                homeTitle.style.transform = "scale(1.2)";
-                setTimeout(() => {
-                    homeTitle.style.transform = "scale(1)";
-                }, 800);
-            }
-        });
-
-        // Add click effects to interactive elements
-        document.querySelectorAll('.social-icon, .responsibility-square, .project-card').forEach(element => {
-            element.addEventListener('click', () => {
-                element.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    element.style.transform = '';
-                }, 150);
-            });
-        });
-
-        // Add floating particles effect
-        function createFloatingParticle() {
-            const particle = document.createElement('div');
-            particle.style.position = 'fixed';
-            particle.style.width = '4px';
-            particle.style.height = '4px';
-            particle.style.background = 'rgba(0, 48, 192, 0.3)';
-            particle.style.borderRadius = '50%';
-            particle.style.pointerEvents = 'none';
-            particle.style.zIndex = '1';
-            particle.style.left = Math.random() * window.innerWidth + 'px';
-            particle.style.top = window.innerHeight + 'px';
-            
-            document.body.appendChild(particle);
-            
-            const animation = particle.animate([
-                { transform: 'translateY(0px)', opacity: 1 },
-                { transform: `translateY(-${window.innerHeight + 100}px)`, opacity: 0 }
-            ], {
-                duration: Math.random() * 3000 + 2000,
-                easing: 'linear'
-            });
-            
-            animation.onfinish = () => {
-                particle.remove();
-            };
-        }
-
-        // Create floating particles periodically
-        setInterval(createFloatingParticle, 2000);
-
         // Enhanced scroll animations with stagger effect
         const staggerObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -2991,7 +3515,7 @@
         }, observerOptions);
 
         // Apply stagger animation to containers
-        document.querySelectorAll('.skills-content, .responsibilities-container, .projects-grid').forEach(container => {
+        document.querySelectorAll('.skills-content, .responsibilities-container, .projects-grid, .services-grid').forEach(container => {
             staggerObserver.observe(container);
         });
     </script>
