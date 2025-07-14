@@ -39,6 +39,7 @@
             padding: 0;
             box-sizing: border-box;
         }
+        
 
         body {
             font-family: 'Poppins', sans-serif;
@@ -1902,10 +1903,11 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .theme-toggle {
-                top: 15px;
-                right: 15px;
-                width: 50px;
-                height: 50px;
+                top: 5px;
+                right: 60px;
+                width: 55px;
+                height: 55px;
+                align-items: center;
             }
 
             .theme-icon {
@@ -2246,12 +2248,12 @@
                 </div>
             </div>
         </div>
-        <div class="skills-bar">
+        <!--<div class="skills-bar">
             <div class="skill-tag">Web Development</div>
             <div class="skill-tag">UI/UX Design</div>
             <div class="skill-tag">Front-End Development</div>
             <div class="skill-tag">Responsive Design</div>
-        </div>
+        </div>-->
     </section>
 
     <!-- Services Section -->
@@ -3117,11 +3119,11 @@
         }
 
         // Touch/Swipe Event Handlers
-        certCarouselContainer.addEventListener('touchstart', (e) => {
+        /*certCarouselContainer.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
             isDragging = true;
             certCarousel.style.transition = 'none';
-        });
+        });*/
 
         certCarouselContainer.addEventListener('touchmove', (e) => {
             if (!isDragging) return;
